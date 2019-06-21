@@ -5,6 +5,9 @@
 * [Default.aspx.cs](./CS/WebSite/Default.aspx.cs) (VB: [Default.aspx.vb](./VB/WebSite/Default.aspx.vb))
 <!-- default file list end -->
 # ASPxMenu - How to bind a control to a database
+<!-- run online -->
+**[[Run Online]](https://codecentral.devexpress.com/e49/)**
+<!-- run online end -->
 
 
 <p>This sample shows how to bind the <strong>ASPxMenu</strong> to data stored in a database.</p>
