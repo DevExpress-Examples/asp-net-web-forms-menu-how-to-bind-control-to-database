@@ -17,19 +17,19 @@ Public Partial Class ASPxperience_Menu_BuildMenuFromDB_BuildMenuFromDB
         BuildMenu(ASPxMenu1, AccessDataSource1)
     End Sub
 
-    Protected Sub BuildMenu(ByVal menu As DevExpress.Web.ASPxMenu.ASPxMenu, ByVal dataSource As SqlDataSource)
+    Protected Sub BuildMenu(ByVal menu As DevExpress.Web.ASPxMenu, ByVal dataSource As SqlDataSource)
         ' Get DataView
         Dim arg As DataSourceSelectArguments = New DataSourceSelectArguments()
         Dim dataView As DataView = TryCast(dataSource.Select(arg), DataView)
         dataView.Sort = "ParentID"
 
         ' Build Menu Items
-        Dim menuItems As Dictionary(Of String, DevExpress.Web.ASPxMenu.MenuItem) = New Dictionary(Of String, DevExpress.Web.ASPxMenu.MenuItem)()
+        Dim menuItems As Dictionary(Of String, DevExpress.Web.MenuItem) = New Dictionary(Of String, DevExpress.Web.MenuItem)()
 
         Dim i As Integer = 0
         Do While i < dataView.Count
             Dim row As DataRow = dataView(i).Row
-            Dim item As DevExpress.Web.ASPxMenu.MenuItem = CreateMenuItem(row)
+            Dim item As DevExpress.Web.MenuItem = CreateMenuItem(row)
             Dim itemID As String = row("ID").ToString()
             Dim parentID As String = row("ParentID").ToString()
 
@@ -45,8 +45,8 @@ Public Partial Class ASPxperience_Menu_BuildMenuFromDB_BuildMenuFromDB
         Loop
     End Sub
 
-    Private Function CreateMenuItem(ByVal row As DataRow) As DevExpress.Web.ASPxMenu.MenuItem
-        Dim ret As DevExpress.Web.ASPxMenu.MenuItem = New DevExpress.Web.ASPxMenu.MenuItem()
+    Private Function CreateMenuItem(ByVal row As DataRow) As DevExpress.Web.MenuItem
+        Dim ret As DevExpress.Web.MenuItem = New DevExpress.Web.MenuItem()
         ret.Text = row("Text").ToString()
         ret.NavigateUrl = row("NavigateUrl").ToString()
         Return ret

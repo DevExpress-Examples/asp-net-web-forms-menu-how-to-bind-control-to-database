@@ -15,19 +15,19 @@ public partial class ASPxperience_Menu_BuildMenuFromDB_BuildMenuFromDB : System.
         BuildMenu(ASPxMenu1, AccessDataSource1);
     }
 
-    protected void BuildMenu(DevExpress.Web.ASPxMenu.ASPxMenu menu, SqlDataSource dataSource) {
+    protected void BuildMenu(DevExpress.Web.ASPxMenu menu, SqlDataSource dataSource) {
         // Get DataView
         DataSourceSelectArguments arg = new DataSourceSelectArguments();
         DataView dataView = dataSource.Select(arg) as DataView;
         dataView.Sort = "ParentID";
 
         // Build Menu Items
-        Dictionary<string, DevExpress.Web.ASPxMenu.MenuItem> menuItems =
-            new Dictionary<string, DevExpress.Web.ASPxMenu.MenuItem>();
+        Dictionary<string, DevExpress.Web.MenuItem> menuItems =
+            new Dictionary<string, DevExpress.Web.MenuItem>();
 
         for (int i = 0; i < dataView.Count; i++) {
             DataRow row = dataView[i].Row;
-            DevExpress.Web.ASPxMenu.MenuItem item = CreateMenuItem(row);
+            DevExpress.Web.MenuItem item = CreateMenuItem(row);
             string itemID = row["ID"].ToString();
             string parentID = row["ParentID"].ToString();
 
@@ -41,8 +41,8 @@ public partial class ASPxperience_Menu_BuildMenuFromDB_BuildMenuFromDB : System.
         }
     }
 
-    private DevExpress.Web.ASPxMenu.MenuItem CreateMenuItem(DataRow row) {
-        DevExpress.Web.ASPxMenu.MenuItem ret = new DevExpress.Web.ASPxMenu.MenuItem();
+    private DevExpress.Web.MenuItem CreateMenuItem(DataRow row) {
+        DevExpress.Web.MenuItem ret = new DevExpress.Web.MenuItem();
         ret.Text = row["Text"].ToString();
         ret.NavigateUrl = row["NavigateUrl"].ToString();
         return ret;
