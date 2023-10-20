@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
 
-# ASPxMenu - How to bind a control to a database
+# Menu for ASP.NET Web Forms - How to bind a control to a database
 <!-- run online -->
 **[[Run Online]](https://codecentral.devexpress.com/e49/)**
 <!-- run online end -->
