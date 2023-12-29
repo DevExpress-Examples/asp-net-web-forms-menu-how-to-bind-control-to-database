@@ -5,9 +5,6 @@
 <!-- default badges end -->
 
 # Menu for ASP.NET Web Forms - How to bind a control to a database
-<!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/128554833/)**
-<!-- run online end -->
 
 This sample shows how to bind the [ASPxMenu](https://docs.devexpress.com/AspNet/DevExpress.Web.ASPxMenu) to data stored in a database.
 
